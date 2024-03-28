@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CSCN72040_Group16_ProjectRepo.iml" filepath="$PROJECT_DIR$/.idea/CSCN72040_Group16_ProjectRepo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/src.iml" filepath="$PROJECT_DIR$/src/src.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSCN72040_Group16_ProjectRepo.iml" filepath="$PROJECT_DIR$/CSCN72040_Group16_ProjectRepo.iml" />
     </modules>
   </component>
 </project>

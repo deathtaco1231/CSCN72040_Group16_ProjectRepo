@@ -3,7 +3,8 @@ package MEMENTO;
 public class Memento {
     // The notes stored in memento Object
 
-    private String item;
+    private String item; // This will be the ENTIRE reciept contents, so that we can roll back each time and just reprint an older version
+                         // rather than figuring out what it was that was last added and removing it every time.
 
     // Save a new note String to the memento Object
 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCN72040_Group16_ProjectRepo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CSCN72040_Group16_ProjectRepo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/CATEGORY/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptBottom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptBottom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$TopPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/FILEHANDLING/FileHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/FILEHANDLING/FileHandling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2eInxr6oTAcUs4HEifIj6aI7YKD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="CSCN72040_Group16_ProjectRepo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="" />
+      <created>1711601208566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711601208566</updated>
+      <workItem from="1711601209630" duration="1594000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FileHandling {
+public class FileHandling { // Simply handles creation of scanners, will be handling exceptions later also
     public static Scanner FileScanner(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         if (!file.exists()) { //file with specified name does not exist
