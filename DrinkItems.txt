@@ -1,6 +1,6 @@
 5
-17562 MiniPot 19.99 test.png
-17562 MiniPot 19.99 test.png
-17562 MiniPot 19.99 test.png
-17562 MiniPot 19.99 test.png
-17562 MiniPot 19.99 test.png
+17562 ChiliChugSplash 19.99 Drink1.png
+17562 ChugSplash 19.99 Drink2.png
+17562 BigPot 19.99 Drink3.png
+17562 ChugJug 19.99 Drink4.png
+17562 MiniPot 19.99 Drink5.png

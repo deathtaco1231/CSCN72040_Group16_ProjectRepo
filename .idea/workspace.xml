@@ -5,27 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCN72040_Group16_ProjectRepo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CSCN72040_Group16_ProjectRepo.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Banner1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Banner2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Banner3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Banner4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Banner5.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Drink1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Drink2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Drink3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Drink4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Drink5.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fish1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fish2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fish3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fish4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fish5.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gun1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gun2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gun3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gun4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gun5.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/CATEGORY/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptBottom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptBottom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$RecieptMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/USER_INTERFACE/GUI$TopPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BannerItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrinkItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GunItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/FILEHANDLING/FileHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/FILEHANDLING/FileHandling.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
     </list>
@@ -34,44 +47,76 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2eInxr6oTAcUs4HEifIj6aI7YKD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "build.tools",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bkraw\IdeaProjects\CSCN72040_Group16_ProjectRepo" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="CSCN72040_Group16_ProjectRepo" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,10 +127,19 @@
       <option name="presentableId" value="Default" />
       <updated>1711601208566</updated>
       <workItem from="1711601209630" duration="1594000" />
+      <workItem from="1711740972433" duration="265000" />
+      <workItem from="1711741244464" duration="22022000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="button" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

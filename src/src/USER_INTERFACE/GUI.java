@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class GUI extends JFrame {
     protected ImageIcon logo = new ImageIcon("grocerylogo.png");
-    protected RecieptMain recmain;
+    public RecieptMain recmain;
     protected RecieptBottom recbottom;
     protected TopPanel toppanel;
 

@@ -22,4 +22,6 @@ public class Item {
     public String toString() { // Will be used when adding to the reciept, and for appending the text held by each memento
         return "CODE " + code + " NAME " + name + " PRICE $" + price;
     }
+    public String getName() { return this.name; }
+    public ImageIcon getImageIcon() { return new ImageIcon(img); }
 }

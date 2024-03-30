@@ -1,6 +1,6 @@
 5
-17562 Chicken 19.99 test.png
-17562 Chicken 19.99 test.png
-17562 Chicken 19.99 test.png
-17562 Chicken 19.99 test.png
-17562 Chicken 19.99 test.png
+17562 Black_and_Blue_Shield_Fish 19.99 Fish1.png
+17562 Orange_Flopper 19.99 Fish2.png
+17562 Blue_Slurpfish 19.99 Fish3.png
+17562 Slurp_Jellyfish 19.99 Fish4.png
+17562 Drift_Hop_Flopper 19.99 Fish5.png
