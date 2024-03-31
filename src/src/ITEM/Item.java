@@ -1,7 +1,6 @@
 package ITEM;
 
 import javax.swing.*;
-import java.util.Scanner;
 
 public class Item {
     protected int code;
@@ -19,9 +18,10 @@ public class Item {
         this.price = price;
         this.img = img;
     }
-    public String toString() { // Will be used when adding to the reciept, and for appending the text held by each memento
-        return "CODE " + code + " NAME " + name + " PRICE $" + price;
+    public String toString() { // Will be used when adding to the receipt, and for appending the text held by each memento
+        return "CODE " + code + " NAME " + name + " PRICE $" + price + "\n";
     }
     public String getName() { return this.name; }
     public ImageIcon getImageIcon() { return new ImageIcon(img); }
+    public double getPrice() { return this.price; }
 }

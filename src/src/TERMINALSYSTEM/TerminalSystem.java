@@ -10,14 +10,20 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class TerminalSystem extends JPanel {
-    private GUI gui;
+    private final GUI gui;
     protected CategoryPanel categoryPanel;
     protected ArrayList<Category> categories = new ArrayList<>(); // All categories are held here
+    protected ActionPanel actionPanel;
+    protected int numTimesUndoPressed = 0;
+    protected double lastItemPrice;
+
     public TerminalSystem(GUI gui) throws FileNotFoundException {
         this.gui = gui;
         initCategories();
         this.categoryPanel = new CategoryPanel();
         gui.add(categoryPanel);
+        this.actionPanel = new ActionPanel();
+        gui.add(actionPanel);
         gui.repaint();
     }
     public void initCategories() throws FileNotFoundException {
@@ -62,6 +68,7 @@ public class TerminalSystem extends JPanel {
     public class CategoryPanel extends JPanel implements ActionListener {
         protected JButton[] buttons = new JButton[categories.size()]; //Category buttons get stored in here
         private final ArrayList<ItemPanel> itemPanels = new ArrayList<>(); //Item panels get stored in here
+        protected ItemPanel activeItemPanel;
 
         public CategoryPanel() {
             this.setLayout(null);
@@ -105,8 +112,10 @@ public class TerminalSystem extends JPanel {
                 if (e.getSource() == buttons[i]) {
                     ItemPanel itemPanel = itemPanels.get(i);
                     itemPanel.setVisible(true);
+                    activeItemPanel = itemPanels.get(i);
                     this.setVisible(false);
                     gui.repaint();
+                    actionPanel.buttons[0].setEnabled(true);
                     break;
                 }
             }
@@ -114,8 +123,8 @@ public class TerminalSystem extends JPanel {
     }
 
     public class ItemPanel extends JPanel implements ActionListener{
-        private Category category;
-        private JButton[] buttons;
+        private final Category category;
+        private final JButton[] buttons;
 
         public ItemPanel(Category category) {
             this.category = category;
@@ -153,9 +162,86 @@ public class TerminalSystem extends JPanel {
             for (int i = 0; i < buttons.length; i++) {
                 if (e.getSource() == buttons[i]) {
                     gui.recmain.print(category.getItem(i).toString());
+                    lastItemPrice = category.getItem(i).getPrice();
+                    gui.recbottom.print();
+                    actionPanel.buttons[1].setEnabled(true);
+                    numTimesUndoPressed = 0;
                     break;
                 }
             }
+        }
+    }
+
+    public class ActionPanel extends JPanel implements ActionListener{
+        private final JButton[] buttons = new JButton[3]; //Stores the buttons in the bottom action panel (Back, Remove Item, Enter Code)
+
+        public ActionPanel() {
+            this.setLayout(null);
+            this.setBounds(0, 710, 1200, 130);
+            this.setOpaque(true);
+            this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+            this.setBackground(Color.LIGHT_GRAY);
+
+            initButtons();
+        }
+
+        private void initButtons() {
+            buttons[0] = new JButton("Back");
+            buttons[0].setEnabled(false);
+            buttons[1] = new JButton("Undo");
+            buttons[1].setEnabled(false);
+            buttons[2] = new JButton("Enter Code");
+
+            for (int i = 0; i < buttons.length; i++)
+            {
+                generateButton(i, buttons[i]);
+                this.add(buttons[i]);
+            }
+        }
+
+        private void generateButton(int i, JButton button) {
+            int x = 20 + i * 190;
+            int y = 13;
+
+            button.setBounds(x, y, 180, 90);
+
+            button.setVisible(true);
+            button.setFont(new Font("Arial", Font.BOLD, 16));
+            button.setForeground(Color.BLACK);
+
+            button.addActionListener(this);
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            //Determine which button called the action then display its items
+            for (int i = 0; i < buttons.length; i++) {
+                Object source = e.getSource();
+                if (source.equals(buttons[0])) {
+                    goBack();
+                    break;
+                } else if (source.equals(buttons[1])) {
+                    numTimesUndoPressed++;
+                    if (gui.recmain.undo(numTimesUndoPressed)) //Returns true if no items are left
+                    {
+                        buttons[1].setEnabled(false);
+                    }
+                    gui.recbottom.print();
+                    break;
+                } else if (source.equals(buttons[2])) {
+                    enterCode();
+                    break;
+                }
+            }
+        }
+
+        private void goBack() {
+            categoryPanel.activeItemPanel.setVisible(false);
+            categoryPanel.setVisible(true);
+            buttons[0].setEnabled(false);
+            gui.repaint();
+        }
+
+        private void enterCode() {
         }
     }
 }

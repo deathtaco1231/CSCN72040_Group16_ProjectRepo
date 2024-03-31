@@ -7,11 +7,10 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Category {
-    private Scanner itemScanner; // Each category gets its own scanner to scan items of its designated text file
     protected String name;
     protected ImageIcon symbol;
-    private JButton button;
-    protected ArrayList<Item> items = new ArrayList<Item>(); // Holds all items of this category
+    private final JButton button;
+    protected ArrayList<Item> items = new ArrayList<>(); // Holds all items of this category
     public Category() {
         this.name = "UNNAMED";
         this.symbol = null;
@@ -26,7 +25,9 @@ public class Category {
         button.setIcon(this.symbol);
     }
     public void initItemList(String fname) throws FileNotFoundException {
-        itemScanner = FileHandling.FileScanner(fname);
+        // Each category gets its own scanner to scan items of its designated text file
+        Scanner itemScanner = FileHandling.FileScanner(fname);
+        assert itemScanner != null;
         int itemcount = itemScanner.nextInt(); // First line of every item file MUST be how many items are stored
         while (itemcount != 0) {
             items.add(new Item(itemScanner.nextInt(), itemScanner.next(), itemScanner.nextDouble(), itemScanner.next())); // Grabs data from each line

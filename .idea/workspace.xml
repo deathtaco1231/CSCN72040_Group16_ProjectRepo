@@ -4,41 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Banner1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Banner2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Banner3.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Banner4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Banner5.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Drink1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Drink2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Drink3.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Drink4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Drink5.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fish1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fish2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fish3.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fish4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fish5.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gun1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gun2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gun3.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gun4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gun5.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Added more functionality">
+      <change afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptBottom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BannerItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrinkItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GunItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Caretaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Caretaker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$RecieptBottom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$RecieptMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Caretaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Originator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Originator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
     </list>
@@ -57,9 +45,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -74,28 +65,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "build.tools",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bkraw\IdeaProjects\CSCN72040_Group16_ProjectRepo" />
@@ -128,12 +123,29 @@
       <updated>1711601208566</updated>
       <workItem from="1711601209630" duration="1594000" />
       <workItem from="1711740972433" duration="265000" />
-      <workItem from="1711741244464" duration="22022000" />
+      <workItem from="1711741244464" duration="22470000" />
+      <workItem from="1711815984358" duration="35312000" />
+      <workItem from="1711853577423" duration="761000" />
     </task>
+    <task id="LOCAL-00001" summary="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel">
+      <option name="closed" value="true" />
+      <created>1711768154652</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711768154652</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes" />
+    <MESSAGE value="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel" />
+    <MESSAGE value="Added more functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more functionality" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
