@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Added more functionality">
-      <change afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptBottom.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Caretaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Caretaker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$RecieptBottom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$RecieptMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Caretaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Memento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Originator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Originator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Added more functionality" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +100,7 @@
       <workItem from="1711740972433" duration="265000" />
       <workItem from="1711741244464" duration="22470000" />
       <workItem from="1711815984358" duration="35312000" />
-      <workItem from="1711853577423" duration="761000" />
+      <workItem from="1711853577423" duration="801000" />
     </task>
     <task id="LOCAL-00001" summary="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel">
       <option name="closed" value="true" />
@@ -135,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711768154652</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added more functionality">
+      <option name="closed" value="true" />
+      <created>1711854369770</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711854369770</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
