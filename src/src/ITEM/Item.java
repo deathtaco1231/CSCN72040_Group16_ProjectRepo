@@ -22,6 +22,7 @@ public class Item {
         return "CODE " + code + " NAME " + name + " PRICE $" + price + "\n";
     }
     public String getName() { return this.name; }
+    public int getCode() {return this.code;}
     public ImageIcon getImageIcon() { return new ImageIcon(img); }
     public double getPrice() { return this.price; }
 }

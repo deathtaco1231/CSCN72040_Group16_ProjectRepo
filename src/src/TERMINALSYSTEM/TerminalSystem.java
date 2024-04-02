@@ -27,10 +27,10 @@ public class TerminalSystem extends JPanel {
         gui.repaint();
     }
     public void initCategories() throws FileNotFoundException {
-        Category banners = new Category("Banners", "test.png"); // Each of the 4 current categories is created here as individual objects
-        Category guns = new Category("Weapons", "test.png");
-        Category food = new Category("Foodstuff", "test.png");
-        Category drinks = new Category("Drink Products", "test.png");
+        Category banners = new Category("Banners", "bannerCategory.jpg"); // Each of the 4 current categories is created here as individual objects
+        Category guns = new Category("Weapons", "gunCategory.jpg");
+        Category food = new Category("Foodstuff", "foodCategory.png");
+        Category drinks = new Category("Drink Products", "drinksCategory.png");
         banners.initItemList("BannerItems.txt"); // Each category initializes its own item list
         guns.initItemList("GunItems.txt");
         food.initItemList("FoodItems.txt");
@@ -52,12 +52,13 @@ public class TerminalSystem extends JPanel {
 
         //The rest is just default button properties to work in the panel plus java's built in command pattern
         button.setVisible(true);
-        button.setOpaque(false);
-        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
         button.setVerticalTextPosition(SwingConstants.BOTTOM);
         button.setHorizontalTextPosition(SwingConstants.CENTER);
         button.setFont(new Font("Arial", Font.BOLD, 16));
         button.setForeground(Color.WHITE);
+        button.setBackground(Color.DARK_GRAY);
     }
     /* This will be where categories and items are displayed, or there will be a subclass for items
         which is just the same thing but for displaying items and not categories. For now, we will
@@ -145,7 +146,10 @@ public class TerminalSystem extends JPanel {
             //The math in the loop determines dynamically where in the panel each button will go
             for (int i = 0; i < category.itemCount(); i++) {
                 button = new JButton(category.getItem(i).getName());
-                button.setIcon(category.getItem(i).getImageIcon());
+                Image img = category.getItem(i).getImageIcon().getImage(); // TEST LINE
+                Image newimg = img.getScaledInstance( 150, 150,  java.awt.Image.SCALE_SMOOTH ); // TEST LINE
+                button.setIcon(new ImageIcon(newimg)); // TEST LINE
+                //button.setIcon(category.getItem(i).getImageIcon());
 
                 generateButton(i, button);
 
@@ -173,14 +177,24 @@ public class TerminalSystem extends JPanel {
     }
 
     public class ActionPanel extends JPanel implements ActionListener{
-        private final JButton[] buttons = new JButton[3]; //Stores the buttons in the bottom action panel (Back, Remove Item, Enter Code)
-
+        private final JButton[] buttons = new JButton[5]; //Stores the buttons in the bottom action panel (Back, Remove Item, Enter Code)
+        private JLabel inputlabel;
+        public JTextField input;
         public ActionPanel() {
             this.setLayout(null);
             this.setBounds(0, 710, 1200, 130);
             this.setOpaque(true);
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
             this.setBackground(Color.LIGHT_GRAY);
+            input = new JTextField();
+            this.add(input);
+            input.setBounds(615, 50, 60, 25);
+            input.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+            inputlabel = new JLabel("-->");
+            inputlabel.setFont(new Font("Arial", Font.BOLD, 20));
+            inputlabel.setForeground(new Color(0x7C0101));
+            this.add(inputlabel);
+            inputlabel.setBounds(585, 50, 75, 25);
 
             initButtons();
         }
@@ -191,10 +205,16 @@ public class TerminalSystem extends JPanel {
             buttons[1] = new JButton("Undo");
             buttons[1].setEnabled(false);
             buttons[2] = new JButton("Enter Code");
+            buttons[3] = new JButton("Complete Order");
+            buttons[3].setEnabled(false);
+            buttons[4] = new JButton("Start Order");
 
             for (int i = 0; i < buttons.length; i++)
             {
-                generateButton(i, buttons[i]);
+                if (i == 3 || i == 4)
+                    generateButton(i + 1, buttons[i]);
+                else
+                    generateButton(i, buttons[i]);
                 this.add(buttons[i]);
             }
         }
@@ -214,11 +234,11 @@ public class TerminalSystem extends JPanel {
 
         public void actionPerformed(ActionEvent e) {
             //Determine which button called the action then display its items
-            for (int i = 0; i < buttons.length; i++) {
+            //for (int i = 0; i < buttons.length; i++) {
                 Object source = e.getSource();
                 if (source.equals(buttons[0])) {
                     goBack();
-                    break;
+                   // break;
                 } else if (source.equals(buttons[1])) {
                     numTimesUndoPressed++;
                     if (gui.recmain.undo(numTimesUndoPressed)) //Returns true if no items are left
@@ -226,12 +246,23 @@ public class TerminalSystem extends JPanel {
                         buttons[1].setEnabled(false);
                     }
                     gui.recbottom.print();
-                    break;
+                   // break;
                 } else if (source.equals(buttons[2])) {
                     enterCode();
-                    break;
+                    //break;
+                } else if (source.equals(buttons[3])) {
+                    buttons[3].setEnabled(false);
+                    buttons[4].setEnabled(true);
+                    gui.toppanel.configDate("completed");
+                    printReciept();
                 }
-            }
+                else if (source.equals(buttons[4])) {
+                    buttons[3].setEnabled(true);
+                    buttons[4].setEnabled(false);
+                    gui.toppanel.configDate("started");
+                }
+
+           // }
         }
 
         private void goBack() {
@@ -240,8 +271,25 @@ public class TerminalSystem extends JPanel {
             buttons[0].setEnabled(false);
             gui.repaint();
         }
+        private void printReciept() {
 
+        }
         private void enterCode() {
+            for (int i = 0; i < categories.size(); i++) {
+                for (int j = 0; j < categories.get(i).itemCount(); j++) {
+                    if (!input.getText().trim().equals("")) {
+                        if (Integer.parseInt(input.getText()) == categories.get(i).getItem(j).getCode()) {
+                            gui.recmain.print(categories.get(i).getItem(j).toString());
+                            lastItemPrice = categories.get(i).getItem(j).getPrice();
+                            gui.recbottom.print();
+                            actionPanel.buttons[1].setEnabled(true);
+                            numTimesUndoPressed = 0;
+                            j = categories.get(i).itemCount();
+                            i = categories.size();
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -1,0 +1,177 @@
+Index: src/src/TERMINALSYSTEM/TerminalSystem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package TERMINALSYSTEM;\r\n\r\nimport CATEGORY.Category;\r\nimport USER_INTERFACE.*;\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.io.FileNotFoundException;\r\nimport java.util.ArrayList;\r\n\r\npublic class TerminalSystem extends JPanel {\r\n    private GUI gui;\r\n    protected CategoryPanel categoryPanel;\r\n    protected ArrayList<Category> categories = new ArrayList<>(); // All categories are held here\r\n    public TerminalSystem(GUI gui) throws FileNotFoundException {\r\n        this.gui = gui;\r\n        initCategories();\r\n        this.categoryPanel = new CategoryPanel();\r\n        gui.add(categoryPanel);\r\n        gui.repaint();\r\n    }\r\n    public void initCategories() throws FileNotFoundException {\r\n        Category banners = new Category(\"Banners\", \"test.png\"); // Each of the 4 current categories is created here as individual objects\r\n        Category guns = new Category(\"Weapons\", \"test.png\");\r\n        Category food = new Category(\"Foodstuff\", \"test.png\");\r\n        Category drinks = new Category(\"Drink Products\", \"test.png\");\r\n        banners.initItemList(\"BannerItems.txt\"); // Each category initializes its own item list\r\n        guns.initItemList(\"GunItems.txt\");\r\n        food.initItemList(\"FoodItems.txt\");\r\n        drinks.initItemList(\"DrinkItems.txt\");\r\n        categories.add(banners); // Add each category to the categories list, we will remember the order that they are added for when we create buttons for each category later\r\n        categories.add(guns);\r\n        categories.add(food);\r\n        categories.add(drinks);\r\n    }\r\n\r\n    protected void generateButton(int i, JButton button) {\r\n        int column = i % 3;\r\n        int row = i / 3;\r\n\r\n        int x = 20 + column * 380;\r\n        int y = 13 + row * 300;\r\n\r\n        button.setBounds(x, y, 360, 280);\r\n\r\n        //The rest is just default button properties to work in the panel plus java's built in command pattern\r\n        button.setVisible(true);\r\n        button.setOpaque(false);\r\n        button.setContentAreaFilled(false);\r\n        button.setVerticalTextPosition(SwingConstants.BOTTOM);\r\n        button.setHorizontalTextPosition(SwingConstants.CENTER);\r\n        button.setFont(new Font(\"Arial\", Font.BOLD, 16));\r\n        button.setForeground(Color.WHITE);\r\n    }\r\n    /* This will be where categories and items are displayed, or there will be a subclass for items\r\n        which is just the same thing but for displaying items and not categories. For now, we will\r\n        limit it to 2 rows of 3 for both items and categories before adding arrows for scrolling\r\n        or anything like that. My idea was to use a button array, and just do some matching with what each\r\n        button represents and what was on the screen to determine what the user clicked each time.\r\n     */\r\n    public class CategoryPanel extends JPanel implements ActionListener {\r\n        protected JButton[] buttons = new JButton[categories.size()]; //Category buttons get stored in here\r\n        private final ArrayList<ItemPanel> itemPanels = new ArrayList<>(); //Item panels get stored in here\r\n\r\n        public CategoryPanel() {\r\n            this.setLayout(null);\r\n            this.setBounds(0, 110, 1200, 600);\r\n            this.setOpaque(true);\r\n            this.setBackground(Color.RED);\r\n            this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));\r\n\r\n            initButtons();\r\n            initItemPanels();\r\n        }\r\n\r\n        public void initButtons() {\r\n            JButton button;\r\n\r\n            //The math in the loop determines dynamically where in the panel each button will go\r\n            for (int i = 0; i < categories.size(); i++) {\r\n                button = categories.get(i).getButton();\r\n\r\n                generateButton(i, button);\r\n\r\n                button.addActionListener(this);\r\n\r\n                //Save the button for later reference, then add to the panel\r\n                buttons[i] = button;\r\n                this.add(button);\r\n            }\r\n        }\r\n\r\n        private void initItemPanels() {\r\n            for (Category category : categories) {\r\n                ItemPanel itemPanel = new ItemPanel(category);\r\n                itemPanels.add(itemPanel);\r\n                gui.add(itemPanel);\r\n            }\r\n        }\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            //Determine which button called the action then display its items\r\n            for (int i = 0; i < buttons.length; i++) {\r\n                if (e.getSource() == buttons[i]) {\r\n                    ItemPanel itemPanel = itemPanels.get(i);\r\n                    itemPanel.setVisible(true);\r\n                    this.setVisible(false);\r\n                    gui.repaint();\r\n                    break;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    public class ItemPanel extends JPanel implements ActionListener{\r\n        private Category category;\r\n        private JButton[] buttons;\r\n\r\n        public ItemPanel(Category category) {\r\n            this.category = category;\r\n            this.buttons = new JButton[category.itemCount()];\r\n            this.setLayout(null);\r\n            this.setBounds(0, 110, 1200, 600);\r\n            this.setOpaque(true);\r\n            this.setBackground(Color.RED);\r\n            this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));\r\n            this.setVisible(false);\r\n\r\n            initButtons();\r\n        }\r\n\r\n        private void initButtons() {\r\n            JButton button;\r\n\r\n            //The math in the loop determines dynamically where in the panel each button will go\r\n            for (int i = 0; i < category.itemCount(); i++) {\r\n                button = new JButton(category.getItem(i).getName());\r\n                button.setIcon(category.getItem(i).getImageIcon());\r\n\r\n                generateButton(i, button);\r\n\r\n                button.addActionListener(this);\r\n\r\n                //Save the button for later reference, then add to the panel\r\n                buttons[i] = button;\r\n                this.add(button);\r\n            }\r\n        }\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            //Determine which button called the action then display its items\r\n            for (int i = 0; i < buttons.length; i++) {\r\n                if (e.getSource() == buttons[i]) {\r\n                    gui.recmain.print(category.getItem(i).toString());\r\n                    break;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/src/TERMINALSYSTEM/TerminalSystem.java b/src/src/TERMINALSYSTEM/TerminalSystem.java
+--- a/src/src/TERMINALSYSTEM/TerminalSystem.java	(revision 3c04ee09d0c4648ff6601fb5cac483cef5b701ba)
++++ b/src/src/TERMINALSYSTEM/TerminalSystem.java	(date 1712027808384)
+@@ -21,10 +21,10 @@
+         gui.repaint();
+     }
+     public void initCategories() throws FileNotFoundException {
+-        Category banners = new Category("Banners", "test.png"); // Each of the 4 current categories is created here as individual objects
+-        Category guns = new Category("Weapons", "test.png");
+-        Category food = new Category("Foodstuff", "test.png");
+-        Category drinks = new Category("Drink Products", "test.png");
++        Category banners = new Category("Banners", "bannerCategory.jpg"); // Each of the 4 current categories is created here as individual objects
++        Category guns = new Category("Weapons", "gunCategory.jpg");
++        Category food = new Category("Foodstuff", "foodCategory.png");
++        Category drinks = new Category("Drink Products", "drinksCategory.png");
+         banners.initItemList("BannerItems.txt"); // Each category initializes its own item list
+         guns.initItemList("GunItems.txt");
+         food.initItemList("FoodItems.txt");
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" project-jdk-name=\"21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 3c04ee09d0c4648ff6601fb5cac483cef5b701ba)
++++ b/.idea/misc.xml	(date 1711768288502)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="21" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"957d3e67-107f-4e53-9dbd-04e10f32951d\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/Banner1.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Banner2.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Banner3.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Banner4.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Banner5.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Drink1.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Drink2.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Drink3.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Drink4.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Drink5.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Fish1.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Fish2.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Fish3.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Fish4.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Fish5.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Gun1.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Gun2.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Gun3.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Gun4.PNG\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Gun5.PNG\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/BannerItems.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BannerItems.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DrinkItems.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DrinkItems.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/FoodItems.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/FoodItems.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GunItems.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GunItems.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/src/CATEGORY/Category.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/src/CATEGORY/Category.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/src/ITEM/Item.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/src/ITEM/Item.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"KubernetesApiProvider\"><![CDATA[{\r\n  \"isMigrated\": true\r\n}]]></component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eInxr6oTAcUs4HEifIj6aI7YKD\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"build.tools\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\bkraw\\IdeaProjects\\CSCN72040_Group16_ProjectRepo\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"openjdk-21\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"CSCN72040_Group16_ProjectRepo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"957d3e67-107f-4e53-9dbd-04e10f32951d\" name=\"Changes\" comment=\"\" />\r\n      <created>1711601208566</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711601208566</updated>\r\n      <workItem from=\"1711601209630\" duration=\"1594000\" />\r\n      <workItem from=\"1711740972433\" duration=\"265000\" />\r\n      <workItem from=\"1711741244464\" duration=\"22022000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"button\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3c04ee09d0c4648ff6601fb5cac483cef5b701ba)
++++ b/.idea/workspace.xml	(date 1712030408887)
+@@ -5,42 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/Banner1.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Banner2.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Banner3.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Banner4.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Banner5.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Drink1.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Drink2.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Drink3.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Drink4.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Drink5.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Fish1.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Fish2.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Fish3.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Fish4.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Fish5.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Gun1.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Gun2.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Gun3.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Gun4.PNG" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Gun5.PNG" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/bannerCategory.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/drinksCategory.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/foodCategory.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/gunCategory.jpg" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BannerItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DrinkItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/FoodItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GunItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -56,10 +27,11 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+-  <component name="KubernetesApiProvider"><![CDATA[{
+-  "isMigrated": true
+-}]]></component>
++  <component name="KubernetesApiProvider">{
++  &quot;isMigrated&quot;: true
++}</component>
+   <component name="ProblemsViewState">
+     <option name="selectedTabId" value="CurrentFile" />
+   </component>
+@@ -74,30 +46,31 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.Main.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "main",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "kotlin-language-version-configured": "true",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Project",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "build.tools",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\dankp\IdeaProjects\CSCN72040_Group16_ProjectRepo" />
+       <recent name="C:\Users\bkraw\IdeaProjects\CSCN72040_Group16_ProjectRepo" />
+     </key>
+   </component>
+@@ -129,6 +102,7 @@
+       <workItem from="1711601209630" duration="1594000" />
+       <workItem from="1711740972433" duration="265000" />
+       <workItem from="1711741244464" duration="22022000" />
++      <workItem from="1712026853945" duration="1709000" />
+     </task>
+     <servers />
+   </component>

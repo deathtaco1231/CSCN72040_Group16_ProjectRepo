@@ -7,12 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Calendar;
+import java.util.Date;
 
 public class GUI extends JFrame {
+    private JLabel recLabel;
     protected ImageIcon logo = new ImageIcon("grocerylogo.png");
     public ReceiptMain recmain;
     public ReceiptBottom recbottom;
-    protected TopPanel toppanel;
+    public TopPanel toppanel;
     protected Originator originator = new Originator();
     protected Caretaker caretaker = new Caretaker();
 
@@ -30,6 +33,11 @@ public class GUI extends JFrame {
         this.recbottom = new ReceiptBottom();
         this.add(recbottom);
         this.setVisible(true);
+        recLabel = new JLabel("Reciept");
+        recLabel.setBounds(1350, 10, 200, 40);
+        this.add(recLabel);
+        recLabel.setForeground(new Color(0x003612));
+        recLabel.setFont(new Font("Arial", Font.BOLD, 24));
     }
     public class ReceiptMain extends JPanel { // Read-only receipt screen at the right of the frame
         public JTextArea text; // Just contains one label that we will manually manipulate to make it look like a linear receipt
@@ -135,22 +143,41 @@ public class GUI extends JFrame {
         }
     }
     public static class TopPanel extends JPanel { // This will be where the register operator info is stored
-        protected JLabel text;
+        protected JLabel fnameprompt, clerknameprompt, curdate;
+        protected JTextField fname, clerkname;
         public TopPanel() {
             this.setLayout(null);
             this.setBounds(0, 0, 1200, 120);
             this.setOpaque(true);
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
             this.setBackground(Color.LIGHT_GRAY);
-            text = new JLabel("Cashier info displayed here!");
-            text.setFont(new Font("Serif", Font.BOLD, 16));
-            text.setHorizontalAlignment(JLabel.LEFT);
-            text.setVerticalAlignment(JLabel.TOP);
-            text.setHorizontalTextPosition(JLabel.LEFT);
-            text.setVerticalTextPosition(JLabel.TOP);
-            text.setVisible(true);
-            this.add(text);
-            text.setBounds(5, 5, 1190, 110);
+            fnameprompt = new JLabel("Receipt file name");
+            fnameprompt.setFont(new Font("Serif", Font.BOLD, 20));
+            fnameprompt.setVisible(true);
+            this.add(fnameprompt);
+            fnameprompt.setBounds(35, 20, 150, 30);
+            clerknameprompt = new JLabel("Clerk full name");
+            clerknameprompt.setFont(new Font("Serif", Font.BOLD, 20));
+            this.add(clerknameprompt);
+            clerknameprompt.setBounds(290, 20, 150, 30);
+            fname = new JTextField();
+            this.add(fname);
+            fname.setBounds(45, 55, 125, 25);
+            fname.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+            clerkname = new JTextField();
+            this.add(clerkname);
+            clerkname.setBounds(265, 55, 175, 25);
+            clerkname.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+            curdate = new JLabel("Click 'Start' to begin transaction.");
+            this.add(curdate);
+            curdate.setBounds(500, 40, 500, 25);
+            curdate.setForeground(new Color(0x003612));
+            curdate.setFont(new Font("Serif", Font.BOLD, 20));
+        }
+        public void configDate(String op) {
+            Calendar now= Calendar.getInstance();
+            Date d = now.getTime();
+            curdate.setText("Transaction " + op + " at " + d.toString());
         }
     }
 }

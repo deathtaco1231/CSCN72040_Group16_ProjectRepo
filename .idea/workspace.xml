@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Added more functionality" />
+    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Added more functionality">
+      <change afterPath="$PROJECT_DIR$/bannerCategory.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drinksCategory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodCategory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gunCategory.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m___Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BannerItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrinkItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GunItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptBottom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptBottom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +91,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dankp\IdeaProjects\CSCN72040_Group16_ProjectRepo" />
       <recent name="C:\Users\bkraw\IdeaProjects\CSCN72040_Group16_ProjectRepo" />
     </key>
   </component>
