@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Caretaker {
     // Where all mementos are saved
 
-    private ArrayList<Memento> savedItems = new ArrayList<>();
+    private final ArrayList<Memento> savedItems = new ArrayList<>();
 
     // Adds memento to the ArrayList
 

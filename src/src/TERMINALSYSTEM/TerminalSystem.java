@@ -149,8 +149,8 @@ public class TerminalSystem extends JPanel {
             for (int i = 0; i < category.itemCount(); i++) {
                 button = new JButton(category.getItem(i).getName());
                 Image img = category.getItem(i).getImageIcon().getImage(); // TEST LINE
-                Image newimg = img.getScaledInstance( 150, 150,  java.awt.Image.SCALE_SMOOTH ); // TEST LINE
-                button.setIcon(new ImageIcon(newimg)); // TEST LINE
+                Image newImg = img.getScaledInstance( 150, 150,  java.awt.Image.SCALE_SMOOTH ); // TEST LINE
+                button.setIcon(new ImageIcon(newImg)); // TEST LINE
                 //button.setIcon(category.getItem(i).getImageIcon());
 
                 generateButton(i, button);
@@ -180,9 +180,8 @@ public class TerminalSystem extends JPanel {
 
     public class ActionPanel extends JPanel implements ActionListener{
         private final JButton[] buttons = new JButton[5]; //Stores the buttons in the bottom action panel (Back, Remove Item, Enter Code)
-        private JLabel inputlabel;
         public JTextField input;
-        private String transactionStarted, fname, cname, basket;
+        private String transactionStarted, fname, cname;
 
         public ActionPanel() {
             this.setLayout(null);
@@ -194,11 +193,11 @@ public class TerminalSystem extends JPanel {
             this.add(input);
             input.setBounds(615, 50, 60, 25);
             input.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-            inputlabel = new JLabel("-->");
-            inputlabel.setFont(new Font("Arial", Font.BOLD, 20));
-            inputlabel.setForeground(new Color(0x7C0101));
-            this.add(inputlabel);
-            inputlabel.setBounds(585, 50, 75, 25);
+            JLabel inputLabel = new JLabel("-->");
+            inputLabel.setFont(new Font("Arial", Font.BOLD, 20));
+            inputLabel.setForeground(new Color(0x7C0101));
+            this.add(inputLabel);
+            inputLabel.setBounds(585, 50, 75, 25);
 
             initButtons();
         }
@@ -259,7 +258,7 @@ public class TerminalSystem extends JPanel {
                     buttons[4].setEnabled(true);
                     gui.toppanel.configDate("completed");
                     try {
-                        printReciept();
+                        printReceipt();
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -268,7 +267,7 @@ public class TerminalSystem extends JPanel {
                     buttons[3].setEnabled(true);
                     buttons[4].setEnabled(false);
                     gui.toppanel.configDate("started");
-                    transactionStarted = gui.toppanel.getcurdate() + "\n";  //Storing the time that the transaction started for when the receipt gets printed
+                    transactionStarted = gui.toppanel.getCurDate() + "\n";  //Storing the time that the transaction started for when the receipt gets printed
                 }
 
            // }
@@ -281,23 +280,15 @@ public class TerminalSystem extends JPanel {
             gui.repaint();
         }
 
-        private void printReciept() throws IOException {
+        private void printReceipt() throws IOException {
             //Make sure the clerk has entered a filename, their name, and that there are items in the basket
-            fname = gui.toppanel.getfname();
-            cname = gui.toppanel.getclerkname() + "\n";
-            basket = gui.recmain.text.getText();
-            String[] importantData = { fname, cname, basket };
+            fname = gui.toppanel.getFname();
+            cname = gui.toppanel.getClerkName() + "\n";
+            String basket = gui.recmain.text.getText();
+            String[] importantData = { fname, cname, basket};
 
             if (checkFields(importantData)) {
-                String receiptDivider = "---------------------------------------------------\n";    //Receipt divider for categories
-                String transactionEnded = gui.toppanel.getcurdate() + "\n";                         //Date and time of completed order
-                String receiptBottom = gui.recbottom.getReceiptBottom();                            //Order total and other details
-
-                //Build the string we are going to print
-                String receipt = "Tomato Town\n" + receiptDivider
-                        + transactionStarted + transactionEnded + "Clerk: " + cname + receiptDivider
-                        + basket + receiptDivider
-                        + receiptBottom;
+                String receipt = getReceipt(basket);    //Build the receipt
 
                 //Print to screen as well as to file
                 System.out.println(receipt);
@@ -306,6 +297,18 @@ public class TerminalSystem extends JPanel {
             else {
                 System.out.println("Error: No items in basket");
             }
+        }
+
+        private String getReceipt(String basket) {
+            String receiptDivider = "---------------------------------------------------\n";    //Receipt divider for categories
+            String transactionEnded = gui.toppanel.getCurDate() + "\n";                         //Date and time of completed order
+            String receiptBottom = gui.recbottom.getReceiptBottom();                            //Order total and other details
+
+            //Build the string we are going to print
+            return "Tomato Town\n" + receiptDivider
+                    + transactionStarted + transactionEnded + "Clerk: " + cname + receiptDivider
+                    + basket + receiptDivider
+                    + receiptBottom;
         }
 
         //Helper function for printing the receipt
@@ -323,7 +326,7 @@ public class TerminalSystem extends JPanel {
         private void enterCode() {
             for (int i = 0; i < categories.size(); i++) {
                 for (int j = 0; j < categories.get(i).itemCount(); j++) {
-                    if (!input.getText().trim().equals("")) {
+                    if (!input.getText().trim().isEmpty()) {
                         if (Integer.parseInt(input.getText()) == categories.get(i).getItem(j).getCode()) {
                             gui.recmain.print(categories.get(i).getItem(j).toString());
                             lastItemPrice = categories.get(i).getItem(j).getPrice();

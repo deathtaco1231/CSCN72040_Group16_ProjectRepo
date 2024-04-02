@@ -11,11 +11,6 @@ public class Category {
     protected ImageIcon symbol;
     private final JButton button;
     protected ArrayList<Item> items = new ArrayList<>(); // Holds all items of this category
-    public Category() {
-        this.name = "UNNAMED";
-        this.symbol = null;
-        this.button = null;
-    }
     public Category(String name, String symbol) {
         this.name = name;
         this.symbol = new ImageIcon(symbol); // This is used when displaying categories as the image
@@ -33,12 +28,6 @@ public class Category {
             items.add(new Item(itemScanner.nextInt(), itemScanner.next(), itemScanner.nextDouble(), itemScanner.next())); // Grabs data from each line
             itemcount--;
         }
-    }
-    public ImageIcon getSymbol() {
-        return this.symbol;
-    }
-    public String getName() {
-        return this.name;
     }
     public int itemCount() {
         return this.items.size();

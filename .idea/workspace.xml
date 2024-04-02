@@ -4,22 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Added more functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-04-02_12_00_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-04-02_12_00_a_m___Changes_.xml" afterDir="false" />
+    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Completing an order now prints a receipt to the output and to a file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BannerItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BannerItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrinkItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DrinkItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GunItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GunItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/FILEHANDLING/FileHandling.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/FILEHANDLING/FileHandling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/CATEGORY/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Caretaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Caretaker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptBottom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptBottom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$ReceiptMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI$TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/FILEHANDLING/FileHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/FILEHANDLING/FileHandling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/USER_INTERFACE/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/ITEM/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ITEM/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/MEMENTO/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/MEMENTO/Caretaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
     </list>
@@ -121,7 +119,7 @@
       <workItem from="1711815984358" duration="35312000" />
       <workItem from="1711853577423" duration="801000" />
       <workItem from="1712029527609" duration="239000" />
-      <workItem from="1712070538129" duration="9319000" />
+      <workItem from="1712070538129" duration="10143000" />
     </task>
     <task id="LOCAL-00001" summary="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel">
       <option name="closed" value="true" />
@@ -147,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712029613444</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completing an order now prints a receipt to the output and to a file">
+      <option name="closed" value="true" />
+      <created>1712080871991</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712080871991</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +174,8 @@
     <MESSAGE value="changes" />
     <MESSAGE value="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel" />
     <MESSAGE value="Added more functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more functionality" />
+    <MESSAGE value="Completing an order now prints a receipt to the output and to a file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing an order now prints a receipt to the output and to a file" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

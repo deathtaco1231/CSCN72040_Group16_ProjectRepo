@@ -11,7 +11,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class GUI extends JFrame {
-    private JLabel recLabel;
     protected ImageIcon logo = new ImageIcon("grocerylogo.png");
     public ReceiptMain recmain;
     public ReceiptBottom recbottom;
@@ -33,7 +32,7 @@ public class GUI extends JFrame {
         this.recbottom = new ReceiptBottom();
         this.add(recbottom);
         this.setVisible(true);
-        recLabel = new JLabel("Reciept");
+        JLabel recLabel = new JLabel("Receipt");
         recLabel.setBounds(1350, 10, 200, 40);
         this.add(recLabel);
         recLabel.setForeground(new Color(0x003612));
@@ -101,7 +100,6 @@ public class GUI extends JFrame {
     }
     public class ReceiptBottom extends JPanel { // This is for the price, tax and other dynamic info at the bottom of the screen under the receipt
         protected JTextArea text; //Changed this and the label in recmain to text areas, similar functionality as label, except it allows for multiple lines
-        double subtotal = 0;
         public ReceiptBottom() {
             this.setLayout(null);
             this.setBounds(1200, 715, 385, 125);
@@ -145,45 +143,45 @@ public class GUI extends JFrame {
         public String getReceiptBottom() { return text.getText(); }
     }
     public static class TopPanel extends JPanel { // This will be where the register operator info is stored
-        protected JLabel fnameprompt, clerknameprompt, curdate;
-        protected JTextField fname, clerkname;
+        protected JLabel fnamePrompt, clerkNamePrompt, curDate;
+        protected JTextField fname, clerkName;
         public TopPanel() {
             this.setLayout(null);
             this.setBounds(0, 0, 1200, 120);
             this.setOpaque(true);
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
             this.setBackground(Color.LIGHT_GRAY);
-            fnameprompt = new JLabel("Receipt file name");
-            fnameprompt.setFont(new Font("Serif", Font.BOLD, 20));
-            fnameprompt.setVisible(true);
-            this.add(fnameprompt);
-            fnameprompt.setBounds(35, 20, 150, 30);
-            clerknameprompt = new JLabel("Clerk full name");
-            clerknameprompt.setFont(new Font("Serif", Font.BOLD, 20));
-            this.add(clerknameprompt);
-            clerknameprompt.setBounds(290, 20, 150, 30);
+            fnamePrompt = new JLabel("Receipt file name");
+            fnamePrompt.setFont(new Font("Serif", Font.BOLD, 20));
+            fnamePrompt.setVisible(true);
+            this.add(fnamePrompt);
+            fnamePrompt.setBounds(35, 20, 150, 30);
+            clerkNamePrompt = new JLabel("Clerk full name");
+            clerkNamePrompt.setFont(new Font("Serif", Font.BOLD, 20));
+            this.add(clerkNamePrompt);
+            clerkNamePrompt.setBounds(290, 20, 150, 30);
             fname = new JTextField();
             this.add(fname);
             fname.setBounds(45, 55, 125, 25);
             fname.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-            clerkname = new JTextField();
-            this.add(clerkname);
-            clerkname.setBounds(265, 55, 175, 25);
-            clerkname.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-            curdate = new JLabel("Click 'Start' to begin transaction.");
-            this.add(curdate);
-            curdate.setBounds(500, 40, 500, 25);
-            curdate.setForeground(new Color(0x003612));
-            curdate.setFont(new Font("Serif", Font.BOLD, 20));
+            clerkName = new JTextField();
+            this.add(clerkName);
+            clerkName.setBounds(265, 55, 175, 25);
+            clerkName.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+            curDate = new JLabel("Click 'Start' to begin transaction.");
+            this.add(curDate);
+            curDate.setBounds(500, 40, 500, 25);
+            curDate.setForeground(new Color(0x003612));
+            curDate.setFont(new Font("Serif", Font.BOLD, 20));
         }
         public void configDate(String op) {
             Calendar now= Calendar.getInstance();
             Date d = now.getTime();
-            curdate.setText("Transaction " + op + " at " + d.toString());
+            curDate.setText("Transaction " + op + " at " + d);
         }
 
-        public String getfname() { return fname.getText(); }
-        public String getclerkname() { return clerkname.getText(); }
-        public String getcurdate() { return curdate.getText(); }
+        public String getFname() { return fname.getText(); }
+        public String getClerkName() { return clerkName.getText(); }
+        public String getCurDate() { return curDate.getText(); }
     }
 }
