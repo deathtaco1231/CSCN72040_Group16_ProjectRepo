@@ -1,12 +1,14 @@
 package TERMINALSYSTEM;
 
 import CATEGORY.Category;
+import FILEHANDLING.FileHandling;
 import USER_INTERFACE.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class TerminalSystem extends JPanel {
@@ -180,6 +182,8 @@ public class TerminalSystem extends JPanel {
         private final JButton[] buttons = new JButton[5]; //Stores the buttons in the bottom action panel (Back, Remove Item, Enter Code)
         private JLabel inputlabel;
         public JTextField input;
+        private String transactionStarted, fname, cname, basket;
+
         public ActionPanel() {
             this.setLayout(null);
             this.setBounds(0, 710, 1200, 130);
@@ -254,12 +258,17 @@ public class TerminalSystem extends JPanel {
                     buttons[3].setEnabled(false);
                     buttons[4].setEnabled(true);
                     gui.toppanel.configDate("completed");
-                    printReciept();
+                    try {
+                        printReciept();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
                 else if (source.equals(buttons[4])) {
                     buttons[3].setEnabled(true);
                     buttons[4].setEnabled(false);
                     gui.toppanel.configDate("started");
+                    transactionStarted = gui.toppanel.getcurdate() + "\n";  //Storing the time that the transaction started for when the receipt gets printed
                 }
 
            // }
@@ -271,9 +280,46 @@ public class TerminalSystem extends JPanel {
             buttons[0].setEnabled(false);
             gui.repaint();
         }
-        private void printReciept() {
 
+        private void printReciept() throws IOException {
+            //Make sure the clerk has entered a filename, their name, and that there are items in the basket
+            fname = gui.toppanel.getfname();
+            cname = gui.toppanel.getclerkname() + "\n";
+            basket = gui.recmain.text.getText();
+            String[] importantData = { fname, cname, basket };
+
+            if (checkFields(importantData)) {
+                String receiptDivider = "---------------------------------------------------\n";    //Receipt divider for categories
+                String transactionEnded = gui.toppanel.getcurdate() + "\n";                         //Date and time of completed order
+                String receiptBottom = gui.recbottom.getReceiptBottom();                            //Order total and other details
+
+                //Build the string we are going to print
+                String receipt = "Tomato Town\n" + receiptDivider
+                        + transactionStarted + transactionEnded + "Clerk: " + cname + receiptDivider
+                        + basket + receiptDivider
+                        + receiptBottom;
+
+                //Print to screen as well as to file
+                System.out.println(receipt);
+                FileHandling.writeToFile(fname, receipt);
+            }
+            else {
+                System.out.println("Error: No items in basket");
+            }
         }
+
+        //Helper function for printing the receipt
+        //Sets values to default, if there are missing fields
+        private boolean checkFields(String[] data) {
+            if (data[0].isEmpty()) {
+                fname = "receipt.txt";
+            }
+            if (data[1].isBlank()) {
+                cname = "Unknown\n";
+            }
+            return data[2].contains("CODE");   //If there are items in the basket, true proceeds with transaction, false prints an error
+        }
+
         private void enterCode() {
             for (int i = 0; i < categories.size(); i++) {
                 for (int j = 0; j < categories.get(i).itemCount(); j++) {

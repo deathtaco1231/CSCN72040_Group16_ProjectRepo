@@ -1,6 +1,6 @@
 5
-11001 Whale 19.99 Banner1.png
-11002 Pineapple 19.99 Banner2.png
-11003 Bat 19.99 Banner3.png
-11004 Crow 19.99 Banner4.png
-11005 Chick 19.99 Banner5.png
+11001 Whale 4.99 Banner1.png
+11002 Pineapple 4.99 Banner2.png
+11003 Bat 4.99 Banner3.png
+11004 Crow 4.99 Banner4.png
+11005 Chick 4.99 Banner5.png

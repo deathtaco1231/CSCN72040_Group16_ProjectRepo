@@ -141,6 +141,8 @@ public class GUI extends JFrame {
 
             text.setText(receiptText);
         }
+
+        public String getReceiptBottom() { return text.getText(); }
     }
     public static class TopPanel extends JPanel { // This will be where the register operator info is stored
         protected JLabel fnameprompt, clerknameprompt, curdate;
@@ -179,5 +181,9 @@ public class GUI extends JFrame {
             Date d = now.getTime();
             curdate.setText("Transaction " + op + " at " + d.toString());
         }
+
+        public String getfname() { return fname.getText(); }
+        public String getclerkname() { return clerkname.getText(); }
+        public String getcurdate() { return curdate.getText(); }
     }
 }
