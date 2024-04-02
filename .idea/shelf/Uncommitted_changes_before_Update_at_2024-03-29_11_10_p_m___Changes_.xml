@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m__[Changes]" date="1711768257996" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2024-03-29 11:10 p.m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" />
+    <option name="AFTER_PATH" value="out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m__[Changes]/TerminalSystem$CategoryPanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" />
+    <option name="AFTER_PATH" value="out/production/CSCN72040_Group16_ProjectRepo/ITEM/Item.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m__[Changes]/Item.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" />
+    <option name="AFTER_PATH" value="out/production/CSCN72040_Group16_ProjectRepo/MEMENTO/Memento.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-29_11_10_p_m__[Changes]/Memento.class" />
+  </binary>
+</changelist>
