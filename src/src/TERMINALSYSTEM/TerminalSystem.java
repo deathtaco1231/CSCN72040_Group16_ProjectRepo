@@ -317,6 +317,9 @@ public class TerminalSystem extends JPanel {
             if (data[0].isEmpty()) {
                 fname = "receipt.txt";
             }
+            if (!data[0].contains(".txt")) {
+                fname += ".txt";
+            }
             if (data[1].isBlank()) {
                 cname = "Unknown\n";
             }
