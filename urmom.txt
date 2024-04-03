@@ -1,0 +1,20 @@
+Tomato Town
+---------------------------------------------------
+Transaction started at Tue Apr 02 19:32:01 EDT 2024
+Transaction completed at Tue Apr 02 19:32:16 EDT 2024
+Clerk: urmom
+---------------------------------------------------
+CODE 13003 NAME Blue_Slurpfish PRICE $19.99
+CODE 13002 NAME Orange_Flopper PRICE $7.99
+CODE 13005 NAME Drift_Hop_Flopper PRICE $19.99
+CODE 13004 NAME Slurp_Jellyfish PRICE $9.99
+CODE 13001 NAME Black_and_Blue_Shield_Fish PRICE $9.99
+CODE 13002 NAME Orange_Flopper PRICE $7.99
+CODE 13003 NAME Blue_Slurpfish PRICE $19.99
+CODE 13003 NAME Blue_Slurpfish PRICE $19.99
+CODE 13003 NAME Blue_Slurpfish PRICE $19.99
+---------------------------------------------------
+Items: 9
+Subtotal: $135.91
+Tax: $17.67
+Total Due: $153.58

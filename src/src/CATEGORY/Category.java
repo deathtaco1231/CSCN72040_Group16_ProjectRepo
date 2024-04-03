@@ -1,12 +1,13 @@
 package CATEGORY;
 import FILEHANDLING.FileHandling;
 import ITEM.*;
+import ITERATOR.ItemIterator;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Category {
+public class Category implements ItemIterator {
     protected String name;
     protected ImageIcon symbol;
     private final JButton button;
@@ -34,6 +35,10 @@ public class Category {
     }
     public Item getItem(int index) {
         return this.items.get(index);
+    }
+    @Override
+    public Iterator createIterator() {
+        return items.iterator();
     }
     public JButton getButton() { return this.button; }
 }

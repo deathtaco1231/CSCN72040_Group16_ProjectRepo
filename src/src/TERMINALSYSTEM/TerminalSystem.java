@@ -2,6 +2,8 @@ package TERMINALSYSTEM;
 
 import CATEGORY.Category;
 import FILEHANDLING.FileHandling;
+import ITEM.Item;
+import ITERATOR.ItemIterator;
 import USER_INTERFACE.*;
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +12,10 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class TerminalSystem extends JPanel {
+    protected ItemIterator itemIterator;
     private final GUI gui;
     protected CategoryPanel categoryPanel;
     protected ArrayList<Category> categories = new ArrayList<>(); // All categories are held here
@@ -326,7 +330,30 @@ public class TerminalSystem extends JPanel {
             return data[2].contains("CODE");   //If there are items in the basket, true proceeds with transaction, false prints an error
         }
 
-        private void enterCode() {
+        private void enterCode() { // Uses Iterator Instead Of Direct List Access
+            if (!input.getText().trim().isEmpty()) {
+                for (int i = 0; i < categories.size(); i++) {
+                    itemIterator = categories.get(i);
+                    Iterator items = itemIterator.createIterator();
+                    while (items.hasNext()) {
+                        Item tmp = (Item) items.next();
+                        if (Integer.parseInt(input.getText()) == tmp.getCode()) {
+                            gui.recmain.print(tmp.toString());
+                            lastItemPrice = tmp.getPrice();
+                            gui.recbottom.print();
+                            actionPanel.buttons[1].setEnabled(true);
+                            numTimesUndoPressed = 0;
+                            i = categories.size();
+                            break;
+                        }
+                    }
+
+                }
+            }
+
+
+        }
+       /* private void enterCode() {
             for (int i = 0; i < categories.size(); i++) {
                 for (int j = 0; j < categories.get(i).itemCount(); j++) {
                     if (!input.getText().trim().isEmpty()) {
@@ -342,6 +369,6 @@ public class TerminalSystem extends JPanel {
                     }
                 }
             }
-        }
+        }*/
     }
 }

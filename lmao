@@ -1,0 +1,21 @@
+Tomato Town
+---------------------------------------------------
+Transaction started at Tue Apr 02 18:24:38 EDT 2024
+Transaction completed at Tue Apr 02 18:25:11 EDT 2024
+Clerk: balls
+---------------------------------------------------
+CODE 13002 NAME Orange_Flopper PRICE $7.99
+CODE 11002 NAME Pineapple PRICE $4.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 12002 NAME ChugSplash PRICE $9.99
+CODE 11001 NAME Whale PRICE $4.99
+---------------------------------------------------
+Items: 10
+Subtotal: $87.90
+Tax: $11.43
+Total Due: $99.33
