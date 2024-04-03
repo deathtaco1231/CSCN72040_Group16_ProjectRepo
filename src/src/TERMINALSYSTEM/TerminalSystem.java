@@ -81,7 +81,7 @@ public class TerminalSystem extends JPanel {
             this.setLayout(null);
             this.setBounds(0, 110, 1200, 600);
             this.setOpaque(true);
-            this.setBackground(Color.RED);
+            this.setBackground(new Color(0x9D931313, true));
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
 
             initButtons();
@@ -139,7 +139,7 @@ public class TerminalSystem extends JPanel {
             this.setLayout(null);
             this.setBounds(0, 110, 1200, 600);
             this.setOpaque(true);
-            this.setBackground(Color.RED);
+            this.setBackground(new Color(0x9D931313, true));
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
             this.setVisible(false);
 
@@ -192,7 +192,7 @@ public class TerminalSystem extends JPanel {
             this.setBounds(0, 710, 1200, 130);
             this.setOpaque(true);
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
-            this.setBackground(Color.LIGHT_GRAY);
+            this.setBackground(new Color(0x808080));
             input = new JTextField();
             this.add(input);
             input.setBounds(615, 50, 60, 25);

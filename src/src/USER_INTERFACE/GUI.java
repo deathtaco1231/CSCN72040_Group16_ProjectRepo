@@ -49,8 +49,9 @@ public class GUI extends JFrame {
             this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 8));
             this.text = new JTextArea("Items will go here as they are added!\n");
             text.setFont(new Font("Serif", Font.BOLD, 16));
-            text.setBackground(Color.GREEN);
+            text.setBackground(new Color(0xFF94AD93, true));
             text.setEditable(false);
+            text.setForeground(Color.BLACK);
             text.setCaretColor(new Color(0, 0, 0, 0)); //This is so the caret cursor does not appear in the panel
             text.setVisible(true);
             this.add(text);
@@ -107,7 +108,8 @@ public class GUI extends JFrame {
             this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 10));
             text = new JTextArea("Price will be displayed here!\n");
             text.setFont(new Font("Serif", Font.BOLD, 16));
-            text.setBackground(Color.CYAN);
+            text.setBackground(new Color(0xFF88A3B0, true));
+            text.setForeground(Color.BLACK);
             text.setEditable(false);
             text.setCaretColor(new Color(0, 0, 0, 0));
             text.setVisible(true);

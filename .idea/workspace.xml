@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="added final buttons, basic functionality, and finalized entering codes to add items along with testing functionality of that particular feature.">
-      <change afterPath="$PROJECT_DIR$/src/src/ITERATOR/ItemIterator.java" afterDir="false" />
+    <list default="true" id="957d3e67-107f-4e53-9dbd-04e10f32951d" name="Changes" comment="Iterator added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FoodItems.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ActionPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/CATEGORY/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$CategoryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCN72040_Group16_ProjectRepo/TERMINALSYSTEM/TerminalSystem$ItemPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/TERMINALSYSTEM/TerminalSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/USER_INTERFACE/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,7 @@
       <workItem from="1712070538129" duration="10143000" />
       <workItem from="1712092145405" duration="2284000" />
       <workItem from="1712096817367" duration="1200000" />
-      <workItem from="1712105412394" duration="3836000" />
+      <workItem from="1712105412394" duration="4885000" />
     </task>
     <task id="LOCAL-00001" summary="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel">
       <option name="closed" value="true" />
@@ -147,7 +149,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712080871991</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Iterator added">
+      <option name="closed" value="true" />
+      <created>1712113111736</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712113111736</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Iterator added">
+      <option name="closed" value="true" />
+      <created>1712113125952</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712113125952</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +187,8 @@
     <MESSAGE value="Added buttons and labels for categories&#10;Added buttons and labels for items within their categories&#10;Added navigations between category screen and items&#10;No back button yet&#10;Started receipt but not too much&#10;Added a new class called ItemPanel that will invoke the receipt stuff, you can see the action performer in there&#10;&quot;Finished&quot; CategoryPanel" />
     <MESSAGE value="Added more functionality" />
     <MESSAGE value="Completing an order now prints a receipt to the output and to a file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completing an order now prints a receipt to the output and to a file" />
+    <MESSAGE value="Iterator added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iterator added" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
